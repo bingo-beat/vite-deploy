@@ -1,20 +1,20 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useEffect } from "react";
 
-function App() {
-  return (
-    <>
-      <div class="position-absolute top-50 start-50 translate-middle">
-        <div class="text-center">
-          <img
-            src="https://pbs.twimg.com/profile_images/496102814880239616/IDgM95XQ_400x400.png"
-            class="rounded"
-            alt="block"
-          />
-        </div>
-      </div>
-    </>
-  );
+function PreventNavigation() {
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      event.preventDefault();
+      event.returnValue = ""; // Some browsers require a return value
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []); // Empty dependency array ensures that this effect runs only once
+
+  return <div>Page content</div>;
 }
 
-export default App;
+export default PreventNavigation;
