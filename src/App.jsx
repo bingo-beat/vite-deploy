@@ -1,20 +1,15 @@
-import React, { useEffect } from "react";
-
-function PreventNavigation() {
-  useEffect(() => {
-    const handleBeforeUnload = (event) => {
-      event.preventDefault();
-      event.returnValue = ""; // Some browsers require a return value
-    };
-
-    window.addEventListener("beforeunload", handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
-  }, []); // Empty dependency array ensures that this effect runs only once
-
-  return <div>Page content</div>;
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import skull from "./skull";
+import InfiniteLoopAudio from "./InfiniteLoopAudio";
+import voice from "./assets/audio/audio.mp3";
+function App() {
+  return (
+    <>
+      <skull></skull>
+      <InfiniteLoopAudio src={voice} />
+    </>
+  );
 }
 
-export default PreventNavigation;
+export default App;
