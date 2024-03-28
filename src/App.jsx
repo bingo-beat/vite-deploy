@@ -1,12 +1,11 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import InfiniteLoopAudio from "./InfiniteLoopAudio";
+import AudioPlayer from "./AudioPlayer";
 
 function App() {
   return (
     <>
-      <skull></skull>
-      <InfiniteLoopAudio src="./assets/audio/audio.mp3" />
+      <AudioPlayer src="./assets/audio/audio.mp3" />
     </>
   );
 }
