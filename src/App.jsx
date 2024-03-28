@@ -5,7 +5,7 @@ import AudioPlayer from "./AudioPlayer";
 function App() {
   return (
     <>
-      <AudioPlayer src="./assets/audio/audio.mp3" />
+      <AudioPlayer src=".\assets\audio\audio.mp3" />
     </>
   );
 }
