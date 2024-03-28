@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AudioPlayer from "./AudioPlayer";
-import audio from ".assetsaudioaudio.mp3";
+import audio from "./assets/audio/audio.mp3";
 function App() {
   return (
     <>
